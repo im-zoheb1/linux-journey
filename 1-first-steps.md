@@ -151,3 +151,25 @@ sudo apt install man-db
 sudo apt remove man-db
 sudo apt autoremove
 ```
+
+### Installing Software (CentOS)
+
+On **CentOS**, the tool is `dnf` (previously `yum` was used instead of `dnf`).
+
+| Command | Meaning |
+|---------|---------|
+| `dnf upgrade` | Upgrades installed packages |
+| `dnf update` | Same as `dnf upgrade` (alias) |
+| `dnf install [package]` | Installs a package |
+| `dnf remove [package]` | Removes a package |
+
+**Notes:**
+- When the kernel is updated, it's recommended to reboot.
+- On CentOS, you need to install `epel-release` (the EPEL repository) to be able to install additional tools.
+- `crb enable` — fully enables additional packages (turns on the CRB repository, which some EPEL packages depend on).
+- **Heads up:** there are additional commands for `dnf` — check `dnf --help` or `man dnf`.
+
+```bash
+sudo dnf update ; sudo dnf install epel-release ; sudo dnf update
+sudo crb enable
+```
